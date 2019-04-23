@@ -14,6 +14,7 @@
         android:layout_marginRight="54dp"
         android:layout_marginBottom="144dp"
         android:text="True"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/False" />
 
@@ -24,6 +25,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:text="False"
+        android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/True"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -37,11 +39,12 @@
         android:layout_marginEnd="62dp"
         android:layout_marginRight="62dp"
         android:text="Equation"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/yourScore"
         android:layout_width="97dp"
         android:layout_height="89dp"
@@ -53,10 +56,21 @@
         android:layout_marginBottom="136dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Counter"
+        android:text="Your Score"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/question"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 </android.support.constraint.ConstraintLayout>

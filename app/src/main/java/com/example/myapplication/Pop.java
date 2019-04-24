@@ -9,7 +9,7 @@ public class Pop extends Application {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate();
-        setContentView(R.layout.falsepopup);
+        setContentView(R.layout.activity_game_over);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

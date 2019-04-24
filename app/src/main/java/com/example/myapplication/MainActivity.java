@@ -3,12 +3,10 @@ package com.example.myapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.content.Intent;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
         scorer = findViewById(R.id.score);
         question = findViewById(R.id.question);
-        trueButton = findViewById(R.id.True);
-        falseButton = findViewById(R.id.False);
 
         trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        falseButton = findViewById(R.id.False);
         falseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         scorer.setText("" + keepScore);
     }
     private void gameOver() {
-        Intent intent = new Intent(this, GameOverActivity.class);
+        Intent intent = new Intent(this, GameOver.class);
         startActivity(intent);
     }
 }

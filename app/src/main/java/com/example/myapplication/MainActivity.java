@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        scorer = (TextView)findViewById(R.id.score);
-        question = (TextView)findViewById(R.id.question);
-        trueButton = (Button)findViewById(R.id.True);
-        falseButton = (Button)findViewById(R.id.False);
+        scorer = findViewById(R.id.score);
+        question = findViewById(R.id.question);
+        trueButton = findViewById(R.id.True);
+        falseButton = findViewById(R.id.False);
 
         trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,15 +51,17 @@ public class MainActivity extends AppCompatActivity {
         falseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), GameOverActivity.class);
-                startActivity(intent);
+                gameOver();
             }
         });
     }
 
-
     private void updateScore(int currentScore) {
         keepScore++;
         scorer.setText("" + keepScore);
+    }
+    private void gameOver() {
+        Intent intent = new Intent(this, GameOverActivity.class);
+        startActivity(intent);
     }
 }

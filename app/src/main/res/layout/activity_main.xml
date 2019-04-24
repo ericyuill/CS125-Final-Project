@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/yourScore"
+        android:id="@+id/yourScoreText"
         android:layout_width="200dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
@@ -79,7 +79,7 @@
         app:layout_constraintBottom_toTopOf="@+id/question"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toEndOf="@+id/yourScore"
+        app:layout_constraintStart_toEndOf="@+id/yourScoreText"
         tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
+    public static final String final_Score = "com.example.myapplication.final_Score";
 
     private QuestionsLib myLib = new QuestionsLib();
 
@@ -58,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
         scorer.setText("" + keepScore);
     }
     private void gameOver() {
+        int endScore = Integer.parseInt(scorer.getText().toString());
         Intent intent = new Intent(this, GameOver.class);
+        intent.putExtra(final_Score, endScore);
         startActivity(intent);
     }
 }

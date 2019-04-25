@@ -9,6 +9,18 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
+    private static final long START_TIME_IN_MILLIS = 40000;
+
+    private TextView mTextViewCountDown;
+    private Button mButtonStartPause;
+    private Button mButtonReset;
+
+    private CountDownTimer mCountDownTimer;
+
+    private boolean mTimerRunning;
+
+    private long mTimeLeftInMIllis = START_TIME_IN_MILLIS;
+
     public static final String final_Score = "com.example.myapplication.final_Score";
 
     private QuestionsLib myLib = new QuestionsLib();
@@ -24,6 +36,24 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        mTextViewCountDown = findViewById(R.id.text_view_countdown);
+
+        mButtonStartPause = findViewById(R.id.button_start_pause);
+        mButtonReset = findViewById(R.id.button_reset);
+
+        mButtonStartPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        };
+
+        mButtonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+        }
+    
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

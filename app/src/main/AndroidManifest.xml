@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".GameOver">
-            android:parentActivityName=".MainActivity"/></activity>
+            android:parentActivityName=".MainActivity"/>
+        </activity>
     </application>
 
 </manifest>

@@ -10,13 +10,13 @@
         android:id="@+id/True"
         android:layout_width="118dp"
         android:layout_height="97dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginRight="54dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginLeft="61dp"
         android:layout_marginBottom="144dp"
         android:text="True"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/False" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/False"
@@ -31,55 +31,46 @@
 
     <TextView
         android:id="@+id/question"
-        android:layout_width="288dp"
+        android:layout_width="0dp"
         android:layout_height="133dp"
         android:layout_marginStart="61dp"
         android:layout_marginLeft="61dp"
-        android:layout_marginTop="241dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginRight="62dp"
+        android:layout_marginTop="114dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
+        android:layout_marginBottom="116dp"
         android:text="Equation"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/True"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/yourScoreText" />
 
     <TextView
         android:id="@+id/yourScoreText"
-        android:layout_width="200dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="298dp"
-        android:layout_marginRight="298dp"
-        android:layout_marginBottom="136dp"
+        android:layout_width="193dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your Score"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/question"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/button_start_pause" />
 
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="184dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginRight="74dp"
         android:text="0"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/question"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toEndOf="@+id/yourScoreText"
+        app:layout_constraintTop_toBottomOf="@+id/button_reset"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -88,8 +79,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:text="00:00"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_start_pause"
@@ -97,20 +92,24 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_view_countdown"
         android:layout_centerHorizontal="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
         android:text="start"
         android:visibility="invisible"
-        tools:visibility="visible"/>
+        app:layout_constraintEnd_toEndOf="@+id/yourScoreText"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/button_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_view_countdown"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_toEndof="@+id/button_start_pause"
         android:text="reset"
         android:visibility="invisible"
-        tools:visibility="visible"/>
+        app:layout_constraintEnd_toStartOf="@+id/score"
+        app:layout_constraintStart_toStartOf="@+id/score"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 </android.support.constraint.ConstraintLayout>

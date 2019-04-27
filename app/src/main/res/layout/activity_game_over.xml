@@ -7,11 +7,27 @@
     tools:context=".GameOver">
 
     <TextView
+        android:id="@+id/finalScoreNumber"
+        android:layout_width="52dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginRight="74dp"
+        android:text="0"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/highScore"
+        app:layout_constraintTop_toBottomOf="@+id/gameOver" />
+
+    <TextView
         android:id="@+id/gameOver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="204dp"
         android:text="Game Over!"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,11 +41,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="67dp"
         android:layout_marginLeft="67dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="73dp"
         android:layout_marginRight="73dp"
         android:text="Your Score"
-        android:textSize="36sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/finalScore"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameOver" />
@@ -38,7 +54,7 @@
         android:id="@+id/finalScore"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="74dp"
         android:layout_marginRight="74dp"
         android:text="0"
@@ -46,4 +62,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/yourScore"
         app:layout_constraintTop_toBottomOf="@+id/gameOver" />
+
+    <TextView
+        android:id="@+id/highScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="High Score"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/yourScore"
+        app:layout_constraintTop_toBottomOf="@+id/yourScore" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:text="Try Again"
+        app:layout_constraintBottom_toTopOf="@+id/homePage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/homePage"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
+        android:text="Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/resetButton" />
 </android.support.constraint.ConstraintLayout>

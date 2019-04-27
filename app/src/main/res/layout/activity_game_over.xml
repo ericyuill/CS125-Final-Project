@@ -74,7 +74,7 @@
         app:layout_constraintTop_toBottomOf="@+id/yourScore" />
 
     <Button
-        android:id="@+id/resetButton"
+        android:id="@+id/tryAgain"
         android:layout_width="99dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="13dp"
@@ -90,5 +90,5 @@
         android:layout_marginBottom="68dp"
         android:text="Home"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/resetButton" />
+        app:layout_constraintStart_toStartOf="@+id/tryAgain" />
 </android.support.constraint.ConstraintLayout>

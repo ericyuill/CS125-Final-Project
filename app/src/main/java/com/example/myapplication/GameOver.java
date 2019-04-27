@@ -4,6 +4,8 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class GameOver extends AppCompatActivity {
@@ -15,12 +17,11 @@ public class GameOver extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
 
+        //keep track of the final score
         Intent intent = getIntent();
         int score = intent.getIntExtra(MainActivity.final_Score, 0);
         TextView finalScore = findViewById(R.id.finalScore);
         finalScore.setText("" + score);
-
-        TextView highestScore = findViewById(R.id.finalScoreNumber);
 
         SharedPreferences preferences = getSharedPreferences("PREFS", 0);
 
@@ -55,13 +56,27 @@ public class GameOver extends AppCompatActivity {
             editor.putInt("best1", best1);
             editor.apply();
         }
-        //score display
+        //display the highest score
+        TextView highestScore = findViewById(R.id.finalScoreNumber);
         highestScore.setText(best1 + "\n");
+
+        //go back to game page
+        Button tryAgain = findViewById(R.id.tryAgain);
+        tryAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tryAgain();
+            }
+        });
     }
 
     public void onBackPressed() {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
         finish();
+    }
+    public void tryAgain() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

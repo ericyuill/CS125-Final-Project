@@ -4,28 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d65a31"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/True"
         android:layout_width="118dp"
-        android:layout_height="97dp"
+        android:layout_height="50dp"
         android:layout_marginStart="61dp"
         android:layout_marginLeft="61dp"
         android:layout_marginBottom="144dp"
         android:text="True"
         android:textSize="24sp"
+        android:background="#eeeeee"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/False"
         android:layout_width="118dp"
-        android:layout_height="90dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="6dp"
         android:text="False"
         android:textSize="24sp"
+        android:background="#eeeeee"
         app:layout_constraintBaseline_toBaselineOf="@+id/True"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -40,6 +43,7 @@
         android:layout_marginRight="61dp"
         android:layout_marginBottom="116dp"
         android:text="Equation"
+        android:textColor="#eeeeee"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/True"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,6 +60,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your Score"
+        android:textColor="#eeeeee"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_start_pause" />
@@ -68,6 +73,7 @@
         android:layout_marginEnd="74dp"
         android:layout_marginRight="74dp"
         android:text="0"
+        android:textColor="#eeeeee"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_reset"
@@ -82,7 +88,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:text="00:00"
-        android:textColor="@android:color/black"
+        android:textColor="#eeeeee"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

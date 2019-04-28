@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         mTimerRunning = true;
         mButtonStartPause.setText("pause");
         mButtonReset.setVisibility(View.INVISIBLE);
-
          **/
         super.onCreate(savedInstanceState);
 

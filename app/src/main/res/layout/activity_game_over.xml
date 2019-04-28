@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d65a31"
     tools:context=".GameOver">
 
     <TextView
@@ -16,6 +17,7 @@
         android:layout_marginEnd="74dp"
         android:layout_marginRight="74dp"
         android:text="0"
+        android:textColor="#eeeeee"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -29,6 +31,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="204dp"
         android:text="Game Over!"
+        android:textColor="#eeeeee"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -45,6 +48,7 @@
         android:layout_marginEnd="73dp"
         android:layout_marginRight="73dp"
         android:text="Your Score"
+        android:textColor="#eeeeee"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/finalScore"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +62,7 @@
         android:layout_marginEnd="74dp"
         android:layout_marginRight="74dp"
         android:text="0"
+        android:textColor="#eeeeee"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/yourScore"
@@ -69,6 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:text="High Score"
+        android:textColor="#eeeeee"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/yourScore"
         app:layout_constraintTop_toBottomOf="@+id/yourScore" />
@@ -79,6 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="13dp"
         android:text="Try Again"
+        android:background="#eeeeee"
         app:layout_constraintBottom_toTopOf="@+id/homePage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -89,6 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="68dp"
         android:text="Home"
+        android:background="#eeeeee"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tryAgain" />
 </android.support.constraint.ConstraintLayout>

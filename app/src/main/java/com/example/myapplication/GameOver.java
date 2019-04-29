@@ -18,7 +18,7 @@ public class GameOver extends AppCompatActivity {
 
         //keep track of the final score
         Intent intent = getIntent();
-        int score = intent.getIntExtra(MainActivity.final_Score, 0);
+        int score = intent.getIntExtra(HomePage.final_Score, 0);
         TextView finalScore = findViewById(R.id.finalScore);
         finalScore.setText("" + score);
 

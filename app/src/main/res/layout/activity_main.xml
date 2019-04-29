@@ -5,120 +5,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#d65a31"
-    tools:context=".MainActivity">
+    tools:context=".HomePage">
 
-    <Button
-        android:id="@+id/True"
-        android:layout_width="118dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginLeft="61dp"
-        android:layout_marginBottom="144dp"
-        android:text="True"
-        android:textSize="24sp"
-        android:background="#eeeeee"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/gameTitle"
+        android:layout_width="339dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginBottom="52dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Mental Maths The Game"
+        android:textAllCaps="false"
+        android:textColor="#eeeeee"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:fontFamily="sans-serif-condensed-light"
+        app:layout_constraintBottom_toTopOf="@+id/startGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/False"
-        android:layout_width="118dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginRight="6dp"
-        android:text="False"
-        android:textSize="24sp"
+        android:id="@+id/startGame"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:background="#eeeeee"
-        app:layout_constraintBaseline_toBaselineOf="@+id/True"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="0dp"
-        android:layout_height="133dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginLeft="61dp"
-        android:layout_marginTop="114dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginRight="61dp"
-        android:layout_marginBottom="116dp"
-        android:text="Equation"
-        android:textColor="#eeeeee"
-        android:textSize="30sp"
-        app:fontFamily="sans-serif-condensed-light"
-        app:layout_constraintBottom_toTopOf="@+id/True"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yourScoreText" />
-
-    <TextView
-        android:id="@+id/yourScoreText"
-        android:layout_width="193dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Your Score"
-        android:textColor="#eeeeee"
-        android:textSize="30sp"
-        app:fontFamily="sans-serif-condensed-light"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_start_pause" />
-
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="74dp"
-        android:layout_marginRight="74dp"
-        android:text="0"
-        android:textColor="#eeeeee"
-        android:textSize="30sp"
-        app:fontFamily="sans-serif-condensed-light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_reset"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/text_view_countdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:text="00:00"
-        android:textColor="#eeeeee"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Start Game"
+        app:layout_constraintBottom_toTopOf="@+id/leaderboard"
+        app:layout_constraintStart_toStartOf="@+id/leaderboard" />
 
     <Button
-        android:id="@+id/button_start_pause"
-        android:layout_width="wrap_content"
+        android:id="@+id/leaderboard"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_view_countdown"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:text="start"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@+id/yourScoreText"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        android:layout_marginBottom="76dp"
+        android:background="#eeeeee"
+        android:text="Leaderboard"
+        app:layout_constraintBottom_toTopOf="@+id/aboutPage"
+        app:layout_constraintStart_toStartOf="@+id/howToPlay" />
 
     <Button
-        android:id="@+id/button_reset"
-        android:layout_width="wrap_content"
+        android:id="@+id/howToPlay"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_view_countdown"
-        android:text="reset"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toStartOf="@+id/score"
-        app:layout_constraintStart_toStartOf="@+id/score"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        android:layout_marginTop="12dp"
+        android:background="#eeeeee"
+        android:text="How to play"
+        app:layout_constraintStart_toStartOf="@+id/aboutPage"
+        app:layout_constraintTop_toBottomOf="@+id/leaderboard" />
+
+    <Button
+        android:id="@+id/aboutPage"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:background="#eeeeee"
+        android:text="About"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

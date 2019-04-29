@@ -84,11 +84,11 @@ public class GameOver extends AppCompatActivity {
         finish();
     }
     public void tryAgain() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HomePage.class);
         startActivity(intent);
     }
     public void returnToHomePage() {
-        Intent intent = new Intent(this, HomePage.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

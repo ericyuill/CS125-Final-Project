@@ -58,7 +58,7 @@
         android:id="@+id/yourScoreText"
         android:layout_width="193dp"
         android:layout_height="53dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Your Score"
@@ -66,6 +66,7 @@
         android:textSize="30sp"
         app:fontFamily="sans-serif-condensed-light"
         app:layout_constraintEnd_toStartOf="@+id/button_start_pause"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/button_start_pause"
         app:layout_constraintTop_toBottomOf="@+id/button_start_pause" />
 
@@ -90,10 +91,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="28dp"
         android:text="00:00"
         android:textColor="#eeeeee"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,9 +109,10 @@
         android:layout_marginEnd="23dp"
         android:layout_marginRight="23dp"
         android:text="start"
+        android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/reset"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        tools:visibility="invisible" />
 
     <Button
         android:id="@+id/reset"
@@ -117,7 +121,9 @@
         android:layout_marginEnd="44dp"
         android:layout_marginRight="44dp"
         android:text="Reset"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible"/>
 
 </android.support.constraint.ConstraintLayout>

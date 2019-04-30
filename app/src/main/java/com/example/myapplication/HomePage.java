@@ -74,7 +74,6 @@ public class HomePage extends AppCompatActivity {
         });
 
         mTextViewCountDown = findViewById(R.id.text_view_countdown);
-
         updateCountDownText();
     }
 

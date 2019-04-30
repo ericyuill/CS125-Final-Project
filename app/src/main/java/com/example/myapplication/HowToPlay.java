@@ -23,7 +23,7 @@ public class HowToPlay extends AppCompatActivity {
         });
     }
     public void returnToHomePage() {
-        Intent intent = new Intent(this, HomePage.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

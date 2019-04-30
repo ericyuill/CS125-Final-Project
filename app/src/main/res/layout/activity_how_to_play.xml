@@ -7,16 +7,34 @@
     android:background="#d65a31"
     tools:context=".HowToPlay">
 
+    <TextView
+        android:id="@+id/howToPlayDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:text="Once you begin playing, your response time will be timed. If you take more than 5 seconds to answer, GAME OVER for you! Try to confirm whether or not the equation presented to you is True or False and select the corresponding option. Good luck!"
+        android:textColor="#eeeeee"
+        android:textSize="24sp"
+        app:fontFamily="sans-serif-condensed-light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="755dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shia" />

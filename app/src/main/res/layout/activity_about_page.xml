@@ -15,6 +15,7 @@
         android:text="About"
         android:textColor="#d65a31"
         android:textSize="50sp"
+        android:textStyle="bold"
         app:fontFamily="sans-serif-condensed-light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,10 +23,15 @@
 
     <TextView
         android:id="@+id/appDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:text="Hello World"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:text="The Mental Maths Game is a test of your basic arithmetical knowledge. Questions are based on equations which range from having single to multiple operations. The equations may or may not be mathematically sound - it is up to you to determine that!"
+        android:textAllCaps="false"
         android:textColor="#d65a31"
         android:textSize="30sp"
         app:fontFamily="sans-serif-condensed-light"
@@ -37,11 +43,11 @@
         android:id="@+id/returnHomeFromAboutPage"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="110dp"
+        android:layout_marginTop="73dp"
         android:background="#eeeeee"
         android:text="Home"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appDescription" />
 </android.support.constraint.ConstraintLayout>

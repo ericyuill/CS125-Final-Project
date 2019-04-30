@@ -10,9 +10,20 @@ import android.content.Intent;
 import android.widget.TextView;
 
 import java.util.Locale;
+import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    Button True, False;
+
+    private QuestionsLib mQuestions = new QuestionsLib();
+
+    private String mAnswer;
+    private int mScore = 0;
+    private int mQuestionsLength = mQuestions.mQuestions.length;
+
+    Random r;
 
     //variables for the countdown timer
     private static final long START_TIME_IN_MILLIS = 40000;
@@ -40,13 +51,50 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        r = new Random();
+
+        True = (Button) findViewById(R.id.True);
+        False = (Button) findViewById(R.id.False);
+
         scorer = findViewById(R.id.score);
         question = findViewById(R.id.question);
         falseButton = findViewById(R.id.False);
 
+        scorer.setText("Score: " + mScore);
+
+        updateQuestion(r.nextInt(mQuestionsLength));
+
         mTextViewCountDown = findViewById(R.id.text_view_countdown);
         mButtonStartPause = findViewById(R.id.button_start_pause);
         mButtonReset = findViewById(R.id.button_reset);
+
+        True.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(True.getText() == mAnswer) {
+                    mScore++;
+                    scorer.setText("Score: " + mScore);
+                    updateQuestion(r.nextInt(mQuestionsLength));
+                } else {
+                    gameOver();
+                }
+            }
+        });
+
+        False.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(False.getText() == mAnswer) {
+                    mScore++;
+                    scorer.setText("Score: " + mScore);
+                    updateQuestion(r.nextInt(mQuestionsLength));
+                } else {
+                    gameOver();
+                }
+            }
+        });
+
+
 
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +119,16 @@ public class MainActivity extends AppCompatActivity {
         mTimerRunning = true;
         mButtonStartPause.setText("pause");
         mButtonReset.setVisibility(View.INVISIBLE);
+
+
+    }
+
+    private void updateQuestion(int num) {
+        question.setText(mQuestions.getQuestion(num));
+        True.setText(mQuestions.getChoice1(num));
+        False.setText(mQuestions.getChoice2(num));
+
+        mAnswer = mQuestions.getCorrectAnswer(num);
     }
 
     private void startTimer() {
@@ -116,30 +174,6 @@ public class MainActivity extends AppCompatActivity {
         String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
         mTextViewCountDown.setText(timeLeftFormatted);
     }
-    Button trueButton = findViewById(R.id.True);
-        trueButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            onStart();
-        }
-    });
-        trueButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            updateScore(keepScore);
-        }
-    });
-        falseButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            SharedPreferences preferences = getSharedPreferences("PREFS", 0);
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putInt("lastScore", keepScore);
-            editor.apply();
-            gameOver();
-        }
-    });
-}
 
     private void updateScore(int currentScore) {
         keepScore++;

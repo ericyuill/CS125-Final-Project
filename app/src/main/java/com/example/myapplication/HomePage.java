@@ -12,15 +12,15 @@ import android.widget.TextView;
 import java.util.Locale;
 
 
-public class MainActivity extends AppCompatActivity {
+public class HomePage extends AppCompatActivity {
 
     //variables for the countdown timer
-    private static final long START_TIME_IN_MILLIS = 40000;
+    private static final long START_TIME_IN_MILLIS = 5000;
     private TextView mTextViewCountDown;
-    private Button mButtonStartPause;
-    private Button mButtonReset;
+
     private CountDownTimer mCountDownTimer;
     private boolean mTimerRunning;
+
     private long mTimeLeftInMIllis = START_TIME_IN_MILLIS;
 
     //variables for counting the keeping score
@@ -37,38 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        /**
-        mTextViewCountDown = findViewById(R.id.text_view_countdown);
-
-        mButtonStartPause = findViewById(R.id.button_start_pause);
-        mButtonReset = findViewById(R.id.button_reset);
-
-        mButtonStartPause.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mTimerRunning) {
-                    pauseTimer();
-                } else {
-                    startTimer();
-                }
-            }
-        });
-
-        mButtonReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resetTimer();
-            }
-        });
-
-        mTimerRunning = true;
-        mButtonStartPause.setText("pause");
-        mButtonReset.setVisibility(View.INVISIBLE);
-
-         **/
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home_page);
 
         Button trueButton = findViewById(R.id.True);
         trueButton.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 updateScore(keepScore);
+                resetTimer();
+                startTimer();
             }
         });
 
@@ -99,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 gameOver();
             }
         });
+
+        mTextViewCountDown = findViewById(R.id.text_view_countdown);
+
+        updateCountDownText();
     }
 
     private void updateScore(int currentScore) {
@@ -111,24 +88,17 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(final_Score, endScore);
         startActivity(intent);
     }
-
-    private void pauseTimer() {
-        mCountDownTimer.cancel();
-        mTimerRunning = false;
-        mButtonStartPause.setText("start");
-        mButtonReset.setVisibility(View.VISIBLE);
-    }
     private void resetTimer() {
         mTimeLeftInMIllis = START_TIME_IN_MILLIS;
         updateCountDownText();
-        mButtonReset.setVisibility(View.INVISIBLE);
-        mButtonStartPause.setVisibility(View.VISIBLE);
 
     }
     private void updateCountDownText() {
         int minutes = (int) (mTimeLeftInMIllis / 1000) / 60;
         int seconds = (int) (mTimeLeftInMIllis / 1000) % 60;
+
         String timeLeftFormatted = String.format(Locale.getDefault(),"%02d:%02d", minutes, seconds);
+
         mTextViewCountDown.setText(timeLeftFormatted);
     }
     private void startTimer() {
@@ -142,11 +112,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 mTimerRunning = false;
-                mButtonStartPause.setText("Start");
-                mButtonStartPause.setVisibility(View.INVISIBLE);
-                mButtonReset.setVisibility(View.VISIBLE);
-
             }
         }.start();
+        mTimerRunning = true;
     }
 }

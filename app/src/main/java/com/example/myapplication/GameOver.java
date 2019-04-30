@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class GameOver extends AppCompatActivity {
-
     int lastScore;
     int best1, best2, best3;
     @Override
@@ -19,7 +18,7 @@ public class GameOver extends AppCompatActivity {
 
         //keep track of the final score
         Intent intent = getIntent();
-        int score = intent.getIntExtra(MainActivity.final_Score, 0);
+        int score = intent.getIntExtra(HomePage.final_Score, 0);
         TextView finalScore = findViewById(R.id.finalScore);
         finalScore.setText("" + score);
 
@@ -60,12 +59,21 @@ public class GameOver extends AppCompatActivity {
         TextView highestScore = findViewById(R.id.finalScoreNumber);
         highestScore.setText(best1 + "\n");
 
-        //go back to game page
+        //return to the game
         Button tryAgain = findViewById(R.id.tryAgain);
         tryAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tryAgain();
+            }
+        });
+
+        //go back to home page
+        Button homePage = findViewById(R.id.homePage);
+        homePage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                returnToHomePage();
             }
         });
     }
@@ -76,6 +84,10 @@ public class GameOver extends AppCompatActivity {
         finish();
     }
     public void tryAgain() {
+        Intent intent = new Intent(this, HomePage.class);
+        startActivity(intent);
+    }
+    public void returnToHomePage() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

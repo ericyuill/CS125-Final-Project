@@ -92,6 +92,7 @@ public class HomePage extends AppCompatActivity {
         updateCountDownText();
 
     }
+    //aa
     private void updateCountDownText() {
         int minutes = (int) (mTimeLeftInMIllis / 1000) / 60;
         int seconds = (int) (mTimeLeftInMIllis / 1000) % 60;

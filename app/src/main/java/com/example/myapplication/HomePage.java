@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.content.Intent;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Locale;
 
 
@@ -16,32 +18,29 @@ public class HomePage extends AppCompatActivity {
 
     //variables for the countdown timer
     private static final long START_TIME_IN_MILLIS = 5000;
+    private static final long END_TIME_IN_MILLIS = 60;
     private TextView mTextViewCountDown;
 
     private CountDownTimer mCountDownTimer;
-    private boolean mTimerRunning;
+    boolean mTimerRunning = true;
 
     private long mTimeLeftInMIllis = START_TIME_IN_MILLIS;
+    private long endTime = END_TIME_IN_MILLIS;
 
     //variables for counting the keeping score
     public static final String final_Score = "com.example.myapplication.final_Score";
     private TextView scorer;
-    private TextView question;
+    private TextView questionPlaceholder;
     private Button trueButton;
     private Button falseButton;
     private int keepScore = 0;
 
-    //variables for High Score rankings
-    //use scorer for tv_score
-    //use trueButton for b_add; falseButton for b_end
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_home_page);
 
-        Button trueButton = findViewById(R.id.True);
+        trueButton = findViewById(R.id.True);
         trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,14 +49,18 @@ public class HomePage extends AppCompatActivity {
         });
 
         scorer = findViewById(R.id.score);
-        question = findViewById(R.id.question);
+        //questionPlaceholder = findViewById(R.id.question);
 
         trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateScore(keepScore);
-                resetTimer();
-                startTimer();
+                if (mTimerRunning) {
+                    updateScore(keepScore);
+                    resetTimer();
+                    startTimer();
+                } else {
+                    gameOver();
+                }
             }
         });
 
@@ -92,10 +95,10 @@ public class HomePage extends AppCompatActivity {
         updateCountDownText();
 
     }
-    //aa
     private void updateCountDownText() {
         int minutes = (int) (mTimeLeftInMIllis / 1000) / 60;
         int seconds = (int) (mTimeLeftInMIllis / 1000) % 60;
+        //int milliseconds = (int) (mTimeLeftInMIllis / 1000);
 
         String timeLeftFormatted = String.format(Locale.getDefault(),"%02d:%02d", minutes, seconds);
 
